@@ -1,0 +1,15 @@
+{
+  "App": {
+    "postgreSQL": {
+      "url": "postgres://postgres:admin@localhost:5432/webex"
+    },
+    "webServer": {
+      "port": 4000,
+      "protocol": "http",
+      "host": "localhost"
+    },
+    "token": {
+      "secret": "SECRETWEBEX"
+    }
+  }
+}

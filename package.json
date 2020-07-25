@@ -1,0 +1,26 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js",
+    "nodemon": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "config": "^3.3.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.0",
+    "jest": "^26.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "nodemon": "^2.0.4",
+    "pg-promise": "^10.5.8"
+  }
+}

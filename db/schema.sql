@@ -1,17 +1,25 @@
-DROP DATABASE IF EXISTS webex;
-CREATE DATABASE webex;
+-- Table: public.projects
 
-DROP TABLE IF EXISTS users;
-CREATE TABLE users(
-   id SERIAL PRIMARY KEY,
-   first_name TEXT,
-   last_name TEXT,
-   password TEXT,
-   email TEXT
+-- DROP TABLE public.projects;
 
+CREATE TABLE public.projects
+(
+    id integer NOT NULL DEFAULT nextval('products_id_seq'::regclass),
+    name text COLLATE pg_catalog."default",
+    status_progress text COLLATE pg_catalog."default",
+    status_provider text COLLATE pg_catalog."default",
+    complicity integer NOT NULL,
+    owner_id integer,
+    resources integer,
+    price integer,
+    provider text COLLATE pg_catalog."default",
+    start_date date,
+    end_date date,
+    offers numeric,
+    CONSTRAINT products_pkey PRIMARY KEY (id)
+)
 
-);
+TABLESPACE pg_default;
 
-INSERT INTO users(first_name,last_name,email)
-values('osama','Almadhoun','osama@come');
-
+ALTER TABLE public.projects
+    OWNER to postgres;

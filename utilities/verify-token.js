@@ -9,8 +9,8 @@ const verifyToken=function (req,res,next) {
              }
              const token=req.headers.authorization.split(' ')[1]
              const decodeToken=jwt.verify(token,
-                 // config.get("App.token.secret")
-                 process.env.secret
+                  config.get("App.token.secret")
+                 // process.env.secret
                  ,
              );
              // console.log("decodeToken ",decodeToken)

@@ -126,8 +126,8 @@ const login =async (req,res,next)=>{
     //  generated token - secret key in config
     try{
         jwt.sign({user:existingUser[0]},
-            // config.get("App.token.secret")
-            process.env.secret
+             config.get("App.token.secret")
+            // process.env.secret
             ,{expiresIn: `${expireIn}s`}
         ,(err,token)=>{
             if(err){

@@ -4,9 +4,9 @@
   "description": "",
   "main": "Server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node index.js",
     "test": "jest --watchAll",
-    "nodemon": "nodemon server.js"
+    "nodemon": "nodemon index.js"
   },
   "engines": {
     "node": "12.16.0"

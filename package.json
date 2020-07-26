@@ -4,8 +4,8 @@
   "description": "",
   "main": "Server.js",
   "scripts": {
-    "test": "jest --watchAll",
     "start": "node server.js",
+    "test": "jest --watchAll",
     "nodemon": "nodemon server.js"
   },
   "engines": {

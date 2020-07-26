@@ -125,7 +125,10 @@ const login =async (req,res,next)=>{
     }
     //  generated token - secret key in config
     try{
-        jwt.sign({user:existingUser[0]},config.get("App.token.secret"),{expiresIn: `${expireIn}s`}
+        jwt.sign({user:existingUser[0]},
+            // config.get("App.token.secret")
+            process.env.secret
+            ,{expiresIn: `${expireIn}s`}
         ,(err,token)=>{
             if(err){
                 return next(new HttpError("Couldn't log you in , please try again later",500));

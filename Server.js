@@ -43,9 +43,19 @@ app.use((error, req, res, next) => {
     res.json({ message: error.message || 'An unknown error occurred!' });
 
 });
-    const port=config.get("App.webServer.port")||4000;
+   let PORT=4000;
+    // env = production or development ......Set NODE_ENV
+    if(app.get('env')==="development"){
+        console.log("Development Env")
+      PORT=  config.get("App.webServer.port")||4000;
+    }else {
+        PORT=  process.env.port||4000;
+        // console.log("Production Env "+process.env.NODE_ENV)
+
+    }
+
     // server listen to port as config specifications file or 4000
-    const server =app.listen(port,function () {
-    console.log("Server is running on port "+port)})
+    const server =app.listen(PORT,function () {
+    console.log("Server is running on port "+PORT)})
 
 module.exports=server;

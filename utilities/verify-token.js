@@ -8,7 +8,11 @@ const verifyToken=function (req,res,next) {
                  return next();
              }
              const token=req.headers.authorization.split(' ')[1]
-             const decodeToken=jwt.verify(token,config.get("App.token.secret"));
+             const decodeToken=jwt.verify(token,
+                 // config.get("App.token.secret")
+                 process.env.secret
+                 ,
+             );
              // console.log("decodeToken ",decodeToken)
              // console.log("token",token)
               req.body.data=decodeToken;

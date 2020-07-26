@@ -44,6 +44,8 @@ app.use((error, req, res, next) => {
 
 });
     const port=config.get("App.webServer.port")||4000;
-    app.listen(port,function () {
-    console.log("Server is running on port "+port)
-})
+    // server listen to port as config specifications file or 4000
+    const server =app.listen(port,function () {
+    console.log("Server is running on port "+port)})
+
+module.exports=server;

@@ -152,10 +152,10 @@ const login =async (req,res,next)=>{
 
 // get information after verify token and return user details
 const getUserInfoFromToken=(req,res,next)=>{
-
+    // console.log("body ",req.body)
     // check if (uer id === user token) or, not empty user and token
     const {userId,data,token}=req.body;
-    // console.log("body ",req.body)
+
           if(!data||userId.toString()!==data.user.id.toString()||!token){
               return next (new HttpError("Failed Authorization",401))
           }

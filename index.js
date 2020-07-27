@@ -43,17 +43,17 @@ app.use((error, req, res, next) => {
     res.json({ message: error.message || 'An unknown error occurred!' });
 
 });
-let PORT=4000;
+let PORT;
 // env = production or development ......Set NODE_ENV
-if(app.get('env')==="development"){
-    console.log("Development Env")
-    PORT=  config.get("App.webServer.port")||4000;
-}else {
-    PORT=  process.env.port||4000;
-    // console.log("Production Env "+process.env.NODE_ENV)
-
-}
-
+// if(app.get('env')==="development"){
+//     console.log("Development Env")
+//     PORT=  config.get("App.webServer.port")||4000;
+// }else {
+//     PORT=  process.env.PORT||4000;
+//     // console.log("Production Env "+process.env.NODE_ENV)
+//
+// }
+PORT=  process.env.PORT||4000;
 // server listen to port as config specifications file or 4000
 const index =app.listen(PORT,function () {
     console.log("Server is running on port "+PORT)})
